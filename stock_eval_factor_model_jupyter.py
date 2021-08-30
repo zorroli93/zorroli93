@@ -1,5 +1,8 @@
-import sys
-sys.path.append('..')
+import sys, os
+base_dir = os.path.dirname(__file__)
+base_dir = os.path.dirname(base_dir)
+print(f'base dir: \n====================\n{base_dir}')
+sys.path.append(base_dir)
 
 from client import interact_mysql_client as mc
 # from client import interact_mongo_client as mo
@@ -98,9 +101,11 @@ class EvalStockFactorModel():
         pprint(stock_datas.head(10))
         return stock_datas
 
-
 if __name__ == '__main__':
+    # 初始化
     smfmodel = EvalStockFactorModel()
-    stock_list = smfmodel.RawStocklist('化工')
+
+    indexname = '食品饮料'
+    stock_list = smfmodel.RawStocklist(indexname)
     filter_list = smfmodel.PercentileRank(stock_list)
     results = smfmodel.StockListOutput(filter_list)
