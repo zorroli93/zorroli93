@@ -1,4 +1,5 @@
 import sys, os
+# 使用标准规范
 base_dir = os.path.dirname(__file__)
 base_dir = os.path.dirname(base_dir)
 print(f'base dir: \n====================\n{base_dir}')
