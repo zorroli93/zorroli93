@@ -1,10 +1,11 @@
 import sys, os
-# 使用标准规范测试
+# 使用标准规范
 base_dir = os.path.dirname(__file__)
 base_dir = os.path.dirname(base_dir)
 print(f'base dir: \n====================\n{base_dir}')
 sys.path.append(base_dir)
 
+# 测试
 from client import interact_mysql_client as mc
 # from client import interact_mongo_client as mo
 import numpy as np
